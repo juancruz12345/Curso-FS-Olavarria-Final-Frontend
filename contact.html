@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado El Sol</title>
+</head>
+<body>
+   
+    <header>
+        <nav>
+            
+            <div>
+                <span class="nav-title">Supermercado El Sol<img loading="lazy" src="imgs\sun-svgrepo-com.svg"></span>
+            </div>
+            <div>
+                <a href="index.html">Historia</a>
+            <span> / </span>
+            <a href="home.html">Home</a>
+            </div>
+        </nav>
+    </header>
+   
+    <div class="title-h3"><h3>Contacto</h3></div>
+
+    <div class="contacto">
+        <p>Teléfono de Atención al Cliente: <strong>0810 222 5316</strong></p>
+        <p>Correo Electrónico: <strong>supermercadoelsol@hotmail.com</strong></p>
+        <p>Síguenos en:</p>
+        <p>Facebook: <strong>Supermercado El Sol</strong> </p>
+        <p>Watsapp: <strong>+2284121212</strong></p>
+        <p>Instagram: <strong>@supermercadoelsol</strong></p>
+    </div>
+
+    <div class="title-h3"><h3>Envíanos un mensaje</h3></div>
+    <div>
+        <form id="form-contact" class="form-contact">
+            <label for="nombre">Nombre</label>
+            <input name="nombre">
+            <label for="apellido">Apellido</label>
+            <input name="apellido">
+            <label for="email">Email</label>
+            <input name="email">
+            <textarea minlength="10" placeholder="envianos un mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        body{
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background: rgb(243, 243, 243);
+        }
+        header{
+            border-radius: 10px;
+            font-size: 25px;
+            background: rgb(195, 0, 47);
+            color: white;
+        }
+        header nav{
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header a{
+            color: white;
+            text-decoration: none;
+        }
+        .nav-title{
+            font-style: italic;
+            display: flex;
+            align-content: center;
+        }
+        .nav-title img{
+            margin-left: 5px;
+           height: 2rem;
+           width: 2rem;
+        }
+        .title-h3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         
+        }
+        .title-h3 h3{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 20%;
+            font-size: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background: rgb(195, 0, 47);
+            color: white;
+            border-radius: 10px;
+        }
+        .contacto{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+          
+            align-items: center;
+        }
+        .form-contact{
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+           align-items: center;
+           
+        }
+        .form-contact input{
+            width: 30%;
+        }
+        .form-contact textarea{
+            margin-top: 20px;
+            width: 60%;
+            height: 20vh;
+        }
+        .form-contact button{
+            margin-top: 40px;
+            height: 6vh;
+            width: 10vw;
+        }
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js
+    "></script>
+    <script src="contact.js"></script>
+    
+</body>
+</html>
