@@ -161,7 +161,7 @@
             pago=false
             MetodoDePago(pago)
         }
-    }
+    } 
 
     function MetodoDePago(pago){
         const inputPagoDiv = document.getElementById('input-pago')

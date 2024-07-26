@@ -3,7 +3,7 @@
 const form = document.getElementById('form-contact')
 form.addEventListener('submit',(e)=>{
     let datos = []
-    e.preventDefault()
+    e.preventDefault() 
     const nombre = "Nombre: " + form[0].value
     const apellido = "Apellido: " + form[1].value
     const email = "Email: " + form[2].value
