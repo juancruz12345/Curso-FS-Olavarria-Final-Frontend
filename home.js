@@ -167,7 +167,7 @@
         const inputPagoDiv = document.getElementById('input-pago')
         const imgTrj = document.querySelectorAll(".img-trj-form")
         const tarjetas = document.getElementsByClassName("tarjeta")
-        console.log(tarjetas)
+        
         
         if(pago){
             imgTrj.forEach( (e)=>{
