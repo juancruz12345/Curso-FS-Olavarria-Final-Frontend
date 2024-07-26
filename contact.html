@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./contact.css" rel="stylesheet">
     <title>Supermercado El Sol</title>
 </head>
 <body>
@@ -20,6 +21,19 @@
             </div>
         </nav>
     </header>
+
+    <div class="title-h3"><h3>Envíanos un mensaje</h3></div>
+   
+        <form id="form-contact" class="form-contact">
+            <label for="nombre">Nombre</label>
+            <input placeholder="nombre" required minlength=3 name="nombre">
+            <label for="apellido">Apellido</label>
+            <input placeholder="apellido" required minlength=3 name="apellido">
+            <label for="email">Email</label>
+            <input placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email"  name="email">
+            <textarea minlength="10" placeholder="envianos un mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
    
     <div class="title-h3"><h3>Contacto</h3></div>
 
@@ -32,104 +46,33 @@
         <p>Instagram: <strong>@supermercadoelsol</strong></p>
     </div>
 
-    <div class="title-h3"><h3>Envíanos un mensaje</h3></div>
-    <div>
-        <form id="form-contact" class="form-contact">
-            <label for="nombre">Nombre</label>
-            <input name="nombre">
-            <label for="apellido">Apellido</label>
-            <input name="apellido">
-            <label for="email">Email</label>
-            <input name="email">
-            <textarea minlength="10" placeholder="envianos un mensaje"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-        body{
-            font-family: "Montserrat", sans-serif;
-            font-optical-sizing: auto;
-            font-style: normal;
-            background: rgb(243, 243, 243);
-        }
-        header{
-            border-radius: 10px;
-            font-size: 25px;
-            background: rgb(195, 0, 47);
-            color: white;
-        }
-        header nav{
-            padding-left: 10px;
-            padding-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        header a{
-            color: white;
-            text-decoration: none;
-        }
-        .nav-title{
-            font-style: italic;
-            display: flex;
-            align-content: center;
-        }
-        .nav-title img{
-            margin-left: 5px;
-           height: 2rem;
-           width: 2rem;
-        }
-        .title-h3{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    <footer>
+        <h3>Supermercado El Sol</h3>
+        <h4>0810 222 5316</h4>
+        <p>Horario de atención lunes a viernes de 8 a 20hs.</p>
+        <div class="tarjetas">
+            <div class="tarjetas-left">
+                <span>Supermercado El Sol</span>
+                <span>CUIT</span>
+                <span>30-685889752-7 -</span>
+                <span>Rivadavia Av 8875, 1,</span>
+                <span>Capital Federal (1407)</span>
+            </div>
+            <div class="tarjetas-img-div">
+                <img loading="lazy" src="imgs\visa.png" alt="logo visa">
+                <img loading="lazy" src="imgs\mastercard.png" alt="logo mastercard">
+                <img loading="lazy" src="imgs\paypal.png" alt="logo paypal">
+                <img loading="lazy" src="imgs\cuenta-dni.png" alt="logo cuenta dni">
+                <img loading="lazy" src="imgs\american-exp.jpg" alt="logo american express">
+            </div>
          
-        }
-        .title-h3 h3{
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            width: 20%;
-            font-size: 30px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            background: rgb(195, 0, 47);
-            color: white;
-            border-radius: 10px;
-        }
-        .contacto{
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-          
-            align-items: center;
-        }
-        .form-contact{
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-           align-items: center;
-           
-        }
-        .form-contact input{
-            width: 30%;
-        }
-        .form-contact textarea{
-            margin-top: 20px;
-            width: 60%;
-            height: 20vh;
-        }
-        .form-contact button{
-            margin-top: 40px;
-            height: 6vh;
-            width: 10vw;
-        }
-    </style>
+        </div>
+        <div class="footer-text">
+            <p>Supermercado El Sol &copy Todos los derechos reservados</p>
+            <p></p>
+        </div>
+    </footer>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js

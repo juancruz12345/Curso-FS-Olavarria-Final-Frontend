@@ -96,7 +96,7 @@
         <img loading="lazy" src=${productosOferta[i].imagen}><div>Descuento del ${productosOferta[i].descuento*100}%</div></img>
         <h3><div class="precio-anterior">$${productosOferta[i].precio}</div> $<span>${descuento}</span></h3>
         
-        <input type="number">
+        <input min=0 type="number">
         <h4>Stock unidades: <span>${productosOferta[i].cantidad}</span></h4>
         </article>`
     }
@@ -105,8 +105,7 @@
         <h2>${products[i].nombre}</h2>
         <img src=${products[i].imagen}></img>
         <h3>$<span>${products[i].precio}</span></h3>
-        
-        <input type="number">
+        <input min=0 type="number">
         <h4>Stock unidades: <span>${products[i].cantidad}</span></h4>
         </article>`
     }
@@ -119,38 +118,81 @@
      
         let compraTotal = 0
         let valores = []
-        console.log(article[0].getElementsByTagName('span')[0].textContent)
+        let pago = false
+
+        const mensajeError = document.getElementById('mensaje-error')
+     
         for(let i=0;i<article.length;i++){
             
             let nombreProducto = article[i].getElementsByTagName('h2')[0].textContent
             let inputValue = article[i].getElementsByTagName('input')[0].value
             let precioProducto = parseInt(article[i].getElementsByTagName('span')[0].textContent)
             let stockProducto = parseInt(article[i].getElementsByTagName('span')[1].textContent)
-
-            const mensajeError = document.getElementById('mensaje-error')
-    
+            
+            
             if(inputValue<=stockProducto){
                 mensajeError.hidden= true
                 let totalProducto = precioProducto*inputValue
                 valores.push(totalProducto)
                 compraTotal += valores[i] 
+                pago=true
             }
+            
             else{
+                
                 compraTotal = 0
                 totalSpan.textContent = ''
-                //alert(`no hay suficiente stock de ${nombreProducto}, el maximo es: ${stockProducto}`)
                 mensajeError.hidden= false
+                mensajeError.style.background= "#fdbbbb";
                 mensajeError.innerHTML = `<h3>no hay suficiente stock de ${nombreProducto}, el maximo es: ${stockProducto}</h3>`
+                pago=false
+                MetodoDePago(pago)
                 return
             }
             }
 
-        totalSpan.textContent = `${compraTotal}`
-      
+
+        
+        if(compraTotal>0){
+            totalSpan.textContent = `${compraTotal}`
+            MetodoDePago(pago)
+        }else{
+            totalSpan.textContent = ''
+            pago=false
+            MetodoDePago(pago)
+        }
     }
+
+    function MetodoDePago(pago){
+        const inputPagoDiv = document.getElementById('input-pago')
+        const imgTrj = document.querySelectorAll(".img-trj-form")
+        const tarjetas = document.getElementsByClassName("tarjeta")
+        console.log(tarjetas)
+        
+        if(pago){
+            imgTrj.forEach( (e)=>{
+                e.hidden = false
+                e.addEventListener('click',()=>{
+                    inputPagoDiv.getElementsByTagName('label')[0].hidden=false
+                    inputPagoDiv.getElementsByTagName('input')[0].hidden=false
+                })
+            })
+        }
+        else{
+            imgTrj.forEach( (e)=>{
+                e.hidden = true
+               /* e.addEventListener('click',()=>{
+                    inputPagoDiv.getElementsByTagName('label')[0].hidden=false
+                    inputPagoDiv.getElementsByTagName('input')[0].hidden=false
+                })*/
+            })
+        }
+    }
+    
     
     btnCompra.addEventListener('click',calcularTotalCompra)
     
+
 
 
 
