@@ -30,7 +30,10 @@
             <label for="apellido">Apellido</label>
             <input placeholder="apellido" required minlength=3 name="apellido">
             <label for="email">Email</label>
-            <input placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email"  name="email">
+            <input placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]{3,}@[a-z.\-]{3,}\.com$" type="email" required  name="email">
+            <label for="tel">Tel</label>
+            <input type="tel" name="tel" pattern="[0-9]{2,5}[0-9]{6}" required>
+
             <textarea minlength="10" placeholder="envianos un mensaje" required></textarea>
             <button type="submit">Enviar</button>
         </form>

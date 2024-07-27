@@ -1,6 +1,9 @@
 'use strict'
 
 const form = document.getElementById('form-contact')
+
+
+
 form.addEventListener('submit',(e)=>{
     let datos = []
     e.preventDefault() 

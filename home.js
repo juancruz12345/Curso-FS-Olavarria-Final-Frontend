@@ -1,5 +1,5 @@
 
-
+'use strict'
 
     const products = [
         {
@@ -87,7 +87,7 @@
     
     const btnCompra = document.getElementById('btn-compra')
     const listaProductos = document.getElementById('lista-productos')
-    
+
     for(let i=0;i<productosOferta.length;i++){
         let descuento = productosOferta[i].precio-(productosOferta[i].precio*productosOferta[i].descuento)
        
@@ -109,6 +109,8 @@
         <h4>Stock unidades: <span>${products[i].cantidad}</span></h4>
         </article>`
     }
+
+    btnCompra.addEventListener('click',calcularTotalCompra)
     
     
     function calcularTotalCompra(){
@@ -150,8 +152,6 @@
                 return
             }
             }
-
-
         
         if(compraTotal>0){
             totalSpan.textContent = `${compraTotal}`
@@ -165,32 +165,75 @@
 
     function MetodoDePago(pago){
         const inputPagoDiv = document.getElementById('input-pago')
-        const imgTrj = document.querySelectorAll(".img-trj-form")
-        const tarjetas = document.getElementsByClassName("tarjeta")
-        
-        
+        const pagoTxt = document.getElementById('pago-txt')
+        const tarjetas = document.querySelectorAll(".tarjeta")
+        const cuentaDni = document.getElementsByClassName("cuentaDni")[0]
+        const paypal= document.getElementsByClassName("paypal")[0]
+    
         if(pago){
-            imgTrj.forEach( (e)=>{
+            pagoTxt.hidden=false
+            tarjetas.forEach( (e)=>{
                 e.hidden = false
                 e.addEventListener('click',()=>{
                     inputPagoDiv.getElementsByTagName('label')[0].hidden=false
                     inputPagoDiv.getElementsByTagName('input')[0].hidden=false
+                    inputPagoDiv.getElementsByTagName('label')[1].hidden=true
+                    inputPagoDiv.getElementsByTagName('input')[1].hidden=true
+                    inputPagoDiv.getElementsByTagName('label')[2].hidden=true
+                    inputPagoDiv.getElementsByTagName('input')[2].hidden=true
+                    inputPagoDiv.getElementsByTagName('label')[3].hidden=true
+                    inputPagoDiv.getElementsByTagName('input')[3].hidden=true
                 })
+            })
+            
+            cuentaDni.hidden=false
+            cuentaDni.addEventListener('click',()=>{
+                inputPagoDiv.getElementsByTagName('label')[0].hidden=true
+                inputPagoDiv.getElementsByTagName('input')[0].hidden=true
+                inputPagoDiv.getElementsByTagName('label')[1].hidden=false
+                inputPagoDiv.getElementsByTagName('input')[1].hidden=false
+                inputPagoDiv.getElementsByTagName('label')[2].hidden=true
+                inputPagoDiv.getElementsByTagName('input')[2].hidden=true
+                inputPagoDiv.getElementsByTagName('label')[3].hidden=true
+                inputPagoDiv.getElementsByTagName('input')[3].hidden=true
+                
+            })
+            
+            paypal.hidden=false
+            paypal.addEventListener('click',()=>{
+                inputPagoDiv.getElementsByTagName('label')[0].hidden=true
+                inputPagoDiv.getElementsByTagName('input')[0].hidden=true
+                inputPagoDiv.getElementsByTagName('label')[1].hidden=true
+                inputPagoDiv.getElementsByTagName('input')[1].hidden=true
+                inputPagoDiv.getElementsByTagName('label')[2].hidden=false
+                inputPagoDiv.getElementsByTagName('input')[2].hidden=false
+                inputPagoDiv.getElementsByTagName('label')[3].hidden=false
+                inputPagoDiv.getElementsByTagName('input')[3].hidden=false
             })
         }
         else{
-            imgTrj.forEach( (e)=>{
+            pagoTxt.hidden=true
+            tarjetas.forEach( (e)=>{
                 e.hidden = true
-               /* e.addEventListener('click',()=>{
-                    inputPagoDiv.getElementsByTagName('label')[0].hidden=false
-                    inputPagoDiv.getElementsByTagName('input')[0].hidden=false
-                })*/
             })
+            cuentaDni.hidden=true
+            paypal.hidden=true
+
+            inputPagoDiv.getElementsByTagName('label')[0].hidden=true
+            inputPagoDiv.getElementsByTagName('input')[0].hidden=true
+            inputPagoDiv.getElementsByTagName('label')[1].hidden=true
+            inputPagoDiv.getElementsByTagName('input')[1].hidden=true
+            inputPagoDiv.getElementsByTagName('label')[2].hidden=true
+            inputPagoDiv.getElementsByTagName('input')[2].hidden=true
+            inputPagoDiv.getElementsByTagName('label')[3].hidden=true
+            inputPagoDiv.getElementsByTagName('input')[3].hidden=true
         }
+
+
     }
     
     
-    btnCompra.addEventListener('click',calcularTotalCompra)
+    
     
 
 

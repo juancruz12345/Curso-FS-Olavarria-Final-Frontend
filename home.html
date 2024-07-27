@@ -23,12 +23,13 @@
     </header>
    
     
-    <div class="title-h3"><h3>Productos</h3></div>
+    
   
   
   <div class="container">
     
     <div class="ofertas">
+        <div class="title-h3"><h3>Productos</h3></div>
         <section class="lista-productos" id="lista-productos">
         </section>
     </div>
@@ -41,19 +42,28 @@
             <div class="mensaje-error" id="mensaje-error" hidden>
             
             </div>
+            <h4 id="pago-txt" hidden>Elija metodo de pago</h4>
             <form class="form-pago" id="form-pago">
                   
                 <div  class="tarjetas-pago">
-                   <img class="img-trj-form" hidden loading="lazy" src="imgs\visa.png" alt="logo visa">
-                   <img class="img-trj-form" hidden loading="lazy" src="imgs\mastercard.png" alt="logo mastercard">
-                   <img class="img-trj-form" hidden loading="lazy" src="imgs\paypal.png" alt="logo paypal">
-                   <img class="img-trj-form" hidden loading="lazy" src="imgs\cuenta-dni.png" alt="logo cuenta dni">
-                   <img class="img-trj-form" hidden loading="lazy" src="imgs\american-exp.jpg" alt="logo american express">
+                   <img class="tarjeta" hidden loading="lazy" src="imgs\visa.png" alt="logo visa">
+                   <img class="tarjeta" hidden loading="lazy" src="imgs\mastercard.png" alt="logo mastercard">
+                   <img class="paypal" hidden loading="lazy" src="imgs\paypal.png" alt="logo paypal">
+                   <img class="cuentaDni" hidden loading="lazy" src="imgs\cuenta-dni.png" alt="logo cuenta dni">
+                   <img class="tarjeta"  hidden loading="lazy" src="imgs\american-exp.jpg" alt="logo american express">
+                   <img class="tarjeta"  hidden loading="lazy" src="imgs\pagoFacil.png" alt="logo pago facil">
                 </div>
 
                 <div class="input-pago" id="input-pago">
+                    
                     <label hidden for="nro-tarjeta">Nro. de la Tarjeta</label>
                     <input hidden name="nro-tarjeta">
+                    <label hidden for="nro-dni">Nro. de DNI</label>
+                    <input hidden name="nro-dni">
+                    <label hidden for="email">Email</label>
+                    <input hidden placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email"  name="email">
+                    <label hidden for="contraseña">Contraseña</label>
+                    <input hidden name="contraseña" type="password">
                 </div>
                </form>
             
@@ -74,11 +84,12 @@
                 <span>Capital Federal (1407)</span>
             </div>
             <div class="tarjetas-img-div">
-                <img class="tarjeta" loading="lazy" src="imgs\visa.png" alt="logo visa">
-                <img class="tarjeta" loading="lazy" src="imgs\mastercard.png" alt="logo mastercard">
+                <img loading="lazy" src="imgs\visa.png" alt="logo visa">
+                <img loading="lazy" src="imgs\mastercard.png" alt="logo mastercard">
                 <img loading="lazy" src="imgs\paypal.png" alt="logo paypal">
                 <img loading="lazy" src="imgs\cuenta-dni.png" alt="logo cuenta dni">
-                <img class="tarjeta" loading="lazy" src="imgs\american-exp.jpg" alt="logo american express">
+                <img loading="lazy" src="imgs\american-exp.jpg" alt="logo american express">
+                <img loading="lazy" src="imgs\pagoFacil.png" alt="logo pago facil">
             </div>
          
         </div>
@@ -89,7 +100,8 @@
     </footer>
 
    
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js
+    "></script>
     <script  src="home.js"></script>
 </body>
 </html>
