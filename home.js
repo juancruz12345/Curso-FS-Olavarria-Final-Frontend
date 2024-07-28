@@ -111,8 +111,7 @@
         </article>`
     }
 
-    btnCompra.addEventListener('click',calcularTotalCompra)
-    
+
     
     function calcularTotalCompra(){
         
@@ -182,8 +181,8 @@
             e.preventDefault()
             if(inputPagoDiv.getElementsByTagName('input')[0].value!==''
              || inputPagoDiv.getElementsByTagName('input')[1].value!==''
-             || inputPagoDiv.getElementsByTagName('input')[2].value!==''
-             || inputPagoDiv.getElementsByTagName('input')[3].value!==''
+             || (inputPagoDiv.getElementsByTagName('input')[2].value!==''
+             && inputPagoDiv.getElementsByTagName('input')[3].value!=='')
             )
             {
                 

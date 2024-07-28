@@ -24,10 +24,10 @@
     </header>
    
     
-    <dialog open>
+    <dialog id="dialog">
        
-        <h4>¡Compra realizada con exito!</h4>
-        
+      
+        <img src="imgs\pago-exitoso.png">
         <button id="cancel">Cerrar</button>
        
       </dialog>
@@ -42,7 +42,7 @@
     
     <div class="aside-div">
         
-            <button class="btn-compra" id="btn-compra">comprar</button>
+            
             <h3>Total</h3>
             <span id="total-span"></span>
             <div class="mensaje-error" id="mensaje-error" hidden>
@@ -68,16 +68,16 @@
                         <label hidden for="nro-tarjeta">Nro. de la Tarjeta</label>
                         <input hidden name="nro-tarjeta" minlength=1 pattern="[0-9]{4}">
                         <label hidden for="nro-dni" >Nro. de DNI</label>
-                        <input hidden name="nro-dni">
+                        <input hidden minlength=8 maxlength=8 name="nro-dni">
                         <label hidden for="email">Email</label>
-                        <input hidden placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email"  name="email">
-                        <label hidden for="contraseña">Contraseña</label>
-                        <input hidden name="contraseña" type="password">
+                        <input hidden minlength=1 placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email"  name="email">
+                        <label hidden  for="contraseña">Contraseña</label>
+                        <input hidden minlength=6 maxlength=12 name="contraseña" type="password">
                         <button hidden id="btn-pago" type="submit">Pagar</button>
                         
                         </form>
                     </div>
-                 
+                    
             </div>
             
        
