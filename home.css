@@ -59,6 +59,7 @@ header a{
     display: flex;
     margin: 0 auto;
     padding-top: 5px;
+    padding-bottom: 120px;
     width: 90vw;
     height: 100%;
     justify-content: space-between;
@@ -68,11 +69,15 @@ header a{
     
     width: 100%;
     height: 100%;
-    display: flex;
+    display:flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 article{
+    display: flex;
+}
+article {
+    
     background: white;
     display: flex;
     flex-direction: column;
@@ -81,6 +86,8 @@ article{
     margin: 10px;
     text-align: center;
     width: 20vw;
+    text-overflow: ellipsis;
+    word-break: break-all;
 }
 article h2{
     white-space: nowrap;
@@ -93,14 +100,21 @@ article h3{
    
 }
 article img{
-    width: 100%;
-    aspect-ratio : 16/9;
+    aspect-ratio: 16/9;
+}
+article h4{
+    margin-top: auto;
 }
 article input{
     margin-top: auto;
      width: 50%;
     align-self: center;
+    border-radius: 9999px;
 }
+article button{
+   margin-top: auto;
+}
+
 
 .precio-anterior{
     text-decoration-line: line-through;
@@ -112,22 +126,35 @@ article div{
 }
 
 .aside-div{
-   
+    
     margin-right: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: sticky;
-    top: 20px;
-    width: 80%;
-    height: 20%;
+    top: 10px;
+    width: 100%;
+    height: 100%;
     background: white;
     border: 1px rgb(121, 121, 121) solid;
     border-radius: 10px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+    word-break: break-all;
 }
-.aside-div h2{
+.div-form{
+    background: linear-gradient(white,rgb(240, 240, 240));
+    overflow-y: auto;
+    text-align: center;
+    z-index:1;
+    flex-wrap: wrap;
+}
+
+.aside-div h3{
     text-align: start;
+    text-overflow: ellipsis;
 }
 .aside-div span{
     font-size: 2rem;
@@ -138,15 +165,40 @@ article div{
     background: #d52b1e;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: bolder;
-    text-shadow: 100px;
     border-radius: 9999px;
     text-align: center;
     width: 10vw;
     height: 10vh;
     color: white;
     cursor: pointer;
+    text-overflow: ellipsis;
+    
+}
+@media screen and (max-height: 300px) {
+   
+    .div-form{
+        height: 50px;
+    }
+}
+@media screen and (max-width: 460px) {
+    .div-form{
+        height: 50px;
+    }
+    .aside-div{
+        /*FALTA AJUSTAR ALTURA SI LA PANTALLA TIENE MENOS DE 282 DE ANCHO*/
+        overflow-y: scroll;
+        font-size: 12px;
+    }
+    .aside-div span{
+        font-size: 1rem;
+    }
+    .btn-compra{
+        width: 50px;
+        height: 20px;
+    }
+
 }
 
 .mensaje-error{
@@ -156,7 +208,7 @@ article div{
 }
 
 
-article:hover{
+article form:hover{
     border: 1px rgb(211, 211, 211) solid;
 }
 
@@ -227,9 +279,10 @@ footer h4{
     width: 4vw;
     height: 8vh;
     border: 1px solid white;
+    
 }
 .tarjetas-pago img:hover{
-    border: 1px rgb(211, 211, 211) solid;
+    border: 1px rgb(56, 56, 56) solid;
 }
 .input-pago{
     display: flex; 
@@ -240,6 +293,15 @@ footer h4{
 .input-pago input{
     width: 80%;
     margin: 5px;
+}
+
+dialog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 30%;
+    height: 30%;
 }
 
 

@@ -1,4 +1,3 @@
-
 'use strict'
 
     const products = [
@@ -98,6 +97,7 @@
         
         <input min=0 type="number">
         <h4>Stock unidades: <span>${productosOferta[i].cantidad}</span></h4>
+        <button onclick="calcularTotalCompra()">Agregar al carrito</button>
         </article>`
     }
     for(let i=0;i<products.length;i++){
@@ -107,6 +107,7 @@
         <h3>$<span>${products[i].precio}</span></h3>
         <input min=0 type="number">
         <h4>Stock unidades: <span>${products[i].cantidad}</span></h4>
+        <button onclick="calcularTotalCompra()">Agregar al carrito</button>
         </article>`
     }
 
@@ -164,16 +165,47 @@
     } 
 
     function MetodoDePago(pago){
+       
+        const divForm = document.getElementsByClassName('div-form')[0]
+     
         const inputPagoDiv = document.getElementById('input-pago')
         const pagoTxt = document.getElementById('pago-txt')
         const tarjetas = document.querySelectorAll(".tarjeta")
         const cuentaDni = document.getElementsByClassName("cuentaDni")[0]
         const paypal= document.getElementsByClassName("paypal")[0]
-    
+        const btnPago = document.getElementById('btn-pago')
+        const formPago = document.getElementById('form-pago')
+        const dialog = document.getElementsByTagName('dialog')[0]
+        const btnDialog = document.getElementById('cancel')
+
+        formPago.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            if(inputPagoDiv.getElementsByTagName('input')[0].value!==''
+             || inputPagoDiv.getElementsByTagName('input')[1].value!==''
+             || inputPagoDiv.getElementsByTagName('input')[2].value!==''
+             || inputPagoDiv.getElementsByTagName('input')[3].value!==''
+            )
+            {
+                
+                dialog.showModal()
+                
+            }else{
+                dialog.close()
+            }
+        })
+        btnDialog.addEventListener('click',()=>{
+            dialog.close()
+        })
+
+
+        
         if(pago){
+            divForm.hidden = false
             pagoTxt.hidden=false
+            
+
             tarjetas.forEach( (e)=>{
-                e.hidden = false
+                e.hidden=false
                 e.addEventListener('click',()=>{
                     inputPagoDiv.getElementsByTagName('label')[0].hidden=false
                     inputPagoDiv.getElementsByTagName('input')[0].hidden=false
@@ -183,10 +215,12 @@
                     inputPagoDiv.getElementsByTagName('input')[2].hidden=true
                     inputPagoDiv.getElementsByTagName('label')[3].hidden=true
                     inputPagoDiv.getElementsByTagName('input')[3].hidden=true
+                    btnPago.hidden = false
+                    
                 })
             })
             
-            cuentaDni.hidden=false
+           
             cuentaDni.addEventListener('click',()=>{
                 inputPagoDiv.getElementsByTagName('label')[0].hidden=true
                 inputPagoDiv.getElementsByTagName('input')[0].hidden=true
@@ -196,10 +230,11 @@
                 inputPagoDiv.getElementsByTagName('input')[2].hidden=true
                 inputPagoDiv.getElementsByTagName('label')[3].hidden=true
                 inputPagoDiv.getElementsByTagName('input')[3].hidden=true
+                btnPago.hidden = false
                 
             })
             
-            paypal.hidden=false
+            
             paypal.addEventListener('click',()=>{
                 inputPagoDiv.getElementsByTagName('label')[0].hidden=true
                 inputPagoDiv.getElementsByTagName('input')[0].hidden=true
@@ -209,15 +244,17 @@
                 inputPagoDiv.getElementsByTagName('input')[2].hidden=false
                 inputPagoDiv.getElementsByTagName('label')[3].hidden=false
                 inputPagoDiv.getElementsByTagName('input')[3].hidden=false
+                btnPago.hidden = false
             })
         }
         else{
-            pagoTxt.hidden=true
+            divForm.hidden = true
+            btnPago.hidden = true
+       
             tarjetas.forEach( (e)=>{
                 e.hidden = true
             })
-            cuentaDni.hidden=true
-            paypal.hidden=true
+         
 
             inputPagoDiv.getElementsByTagName('label')[0].hidden=true
             inputPagoDiv.getElementsByTagName('input')[0].hidden=true

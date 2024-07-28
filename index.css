@@ -242,8 +242,8 @@ article img{
     width: 100%;
     aspect-ratio : 16/9;
     display: block;  
-    
 }
+
 
 article:hover{
     border: 1px rgb(211, 211, 211) solid;

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+
     <link href="./home.css" rel="stylesheet">
     <title>Supermercado El Sol</title>
 </head>
@@ -23,8 +24,13 @@
     </header>
    
     
-    
-  
+    <dialog open>
+       
+        <h4>¡Compra realizada con exito!</h4>
+        
+        <button id="cancel">Cerrar</button>
+       
+      </dialog>
   
   <div class="container">
     
@@ -37,35 +43,42 @@
     <div class="aside-div">
         
             <button class="btn-compra" id="btn-compra">comprar</button>
-            <h2>Total</h2>
+            <h3>Total</h3>
             <span id="total-span"></span>
             <div class="mensaje-error" id="mensaje-error" hidden>
             
             </div>
-            <h4 id="pago-txt" hidden>Elija metodo de pago</h4>
-            <form class="form-pago" id="form-pago">
+            
+            
+            <div hidden class="div-form">
+                <h4 id="pago-txt" hidden>Elija metodo de pago</h4>
+             
                   
-                <div  class="tarjetas-pago">
-                   <img class="tarjeta" hidden loading="lazy" src="imgs\visa.png" alt="logo visa">
-                   <img class="tarjeta" hidden loading="lazy" src="imgs\mastercard.png" alt="logo mastercard">
-                   <img class="paypal" hidden loading="lazy" src="imgs\paypal.png" alt="logo paypal">
-                   <img class="cuentaDni" hidden loading="lazy" src="imgs\cuenta-dni.png" alt="logo cuenta dni">
-                   <img class="tarjeta"  hidden loading="lazy" src="imgs\american-exp.jpg" alt="logo american express">
-                   <img class="tarjeta"  hidden loading="lazy" src="imgs\pagoFacil.png" alt="logo pago facil">
-                </div>
-
-                <div class="input-pago" id="input-pago">
+                    <div  class="tarjetas-pago">
+                       <img class="tarjeta" loading="lazy" src="imgs\visa.png" alt="logo visa">
+                       <img class="tarjeta" loading="lazy" src="imgs\mastercard.png" alt="logo mastercard">
+                       <img class="paypal" loading="lazy" src="imgs\paypal.png" alt="logo paypal">
+                       <img class="cuentaDni" loading="lazy" src="imgs\cuenta-dni.png" alt="logo cuenta dni">
+                       <img class="tarjeta"  loading="lazy" src="imgs\american-exp.jpg" alt="logo american express">
+                       <img class="tarjeta"  loading="lazy" src="imgs\cabal.png" alt="logo cabal">
+                    </div>
                     
-                    <label hidden for="nro-tarjeta">Nro. de la Tarjeta</label>
-                    <input hidden name="nro-tarjeta">
-                    <label hidden for="nro-dni">Nro. de DNI</label>
-                    <input hidden name="nro-dni">
-                    <label hidden for="email">Email</label>
-                    <input hidden placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email"  name="email">
-                    <label hidden for="contraseña">Contraseña</label>
-                    <input hidden name="contraseña" type="password">
-                </div>
-               </form>
+                    <div class="input-pago" id="input-pago">
+                        <form id="form-pago">
+                        <label hidden for="nro-tarjeta">Nro. de la Tarjeta</label>
+                        <input hidden name="nro-tarjeta" minlength=1 pattern="[0-9]{4}">
+                        <label hidden for="nro-dni" >Nro. de DNI</label>
+                        <input hidden name="nro-dni">
+                        <label hidden for="email">Email</label>
+                        <input hidden placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email"  name="email">
+                        <label hidden for="contraseña">Contraseña</label>
+                        <input hidden name="contraseña" type="password">
+                        <button hidden id="btn-pago" type="submit">Pagar</button>
+                        
+                        </form>
+                    </div>
+                 
+            </div>
             
        
     </div>
@@ -89,7 +102,7 @@
                 <img loading="lazy" src="imgs\paypal.png" alt="logo paypal">
                 <img loading="lazy" src="imgs\cuenta-dni.png" alt="logo cuenta dni">
                 <img loading="lazy" src="imgs\american-exp.jpg" alt="logo american express">
-                <img loading="lazy" src="imgs\pagoFacil.png" alt="logo pago facil">
+                <img loading="lazy" src="imgs\cabal.png" alt="logo cabal">
             </div>
          
         </div>
