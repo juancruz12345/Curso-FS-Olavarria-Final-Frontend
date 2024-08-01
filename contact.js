@@ -10,8 +10,10 @@ form.addEventListener('submit',(e)=>{
     const nombre = "Nombre: " + form[0].value
     const apellido = "Apellido: " + form[1].value
     const email = "Email: " + form[2].value
-    const mensaje = "Mensaje: " + form[3].value
-    datos.push(nombre, apellido, email, mensaje)
+    const telefono = "Telefono: " + form[3].value 
+    const mensaje = "Mensaje: " + form[4].value
+
+    datos.push(nombre, apellido, email, telefono, mensaje)
     let blob = new Blob([datos],{type: "text/plain;charset=utf-8"})
     saveAs(blob,'datos-contacto.txt')
 })

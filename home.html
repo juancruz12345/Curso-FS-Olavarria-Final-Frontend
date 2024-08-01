@@ -28,6 +28,7 @@
        
       
         <img src="imgs\pago-exitoso.png">
+        <h3 id="total-dialog"></h3>
         <button id="cancel">Cerrar</button>
        
       </dialog>
@@ -64,15 +65,12 @@
                     </div>
                     
                     <div class="input-pago" id="input-pago">
-                        <form id="form-pago">
-                        <label hidden for="nro-tarjeta">Nro. de la Tarjeta</label>
-                        <input hidden name="nro-tarjeta" minlength=1 pattern="[0-9]{4}">
-                        <label hidden for="nro-dni" >Nro. de DNI</label>
-                        <input hidden minlength=8 maxlength=8 name="nro-dni">
-                        <label hidden for="email">Email</label>
-                        <input hidden minlength=1 placeholder="example@hotmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email"  name="email">
-                        <label hidden  for="contraseña">Contraseña</label>
-                        <input hidden minlength=6 maxlength=12 name="contraseña" type="password">
+                        <form class="form-pago" id="form-pago" autocomplete="off">
+                        <label hidden ></label>
+                        <input hidden >
+                       
+                        <label hidden ></label>
+                        <input hidden >
                         <button hidden id="btn-pago" type="submit">Pagar</button>
                         
                         </form>

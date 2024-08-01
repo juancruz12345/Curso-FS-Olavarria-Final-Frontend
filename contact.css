@@ -107,8 +107,6 @@ footer h4{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 30vh;
-         
 }
 .tarjetas-left{
     padding-left: 10px;
